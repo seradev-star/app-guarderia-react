@@ -63,7 +63,19 @@ body, html {
 .neon-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #ecf4f6;
+  color: #cbd5d6;
+  text-shadow: 
+    0 0 7px #473c3c,
+    0 0 10px #fff,
+    0 0 21px #495552,
+    0 0 42px var(--neon-blue),
+    0 0 82px var(--neon-blue);
+  letter-spacing: 2px;
+}
+.title2{
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #37b1d0;
   text-shadow: 
     0 0 7px #fff,
     0 0 10px #fff,
@@ -72,7 +84,6 @@ body, html {
     0 0 82px var(--neon-blue);
   letter-spacing: 2px;
 }
-
 .subtitle {
   font-size: 1.5rem;
   margin-bottom: 30px;
@@ -238,16 +249,31 @@ body, html {
 /* --- AJUSTES ESPECÍFICOS PARA CELULARES --- */
 @media (max-width: 480px) {
   
-  /* 1. Modificamos el contenedor principal en móvil */
+  /* 1. EL CONTENEDOR PRINCIPAL */
   .app-container {
-    /* En celular, no centramos verticalmente, alineamos arriba */
+    /* IMPORTANTE: Dejamos de centrar verticalmente. Alineamos arriba. */
     align-items: flex-start; 
-    /* Agregamos un buen colchón arriba para que no lo tape la barra del navegador */
-    padding-top: 50px; 
-    padding-bottom: 30px; /* Espacio abajo también */
+    
+    /* ¡AQUÍ ESTÁ LA CLAVE! Un colchón gigante arriba */
+    /* 80px asegura que baje más allá de cualquier barra de estado */
+    padding-top: 80px; 
+    
+    padding-bottom: 30px; /* Un poco de aire abajo también */
   }
 
-  /* 2. Ajustes de textos existentes */
+  /* 2. AJUSTE EXTRA PARA EL NÚMERO DE PREGUNTA */
+  /* Esto asegura que el texto mismo se separe del borde superior de la tarjeta */
+  .question-number {
+    margin-top: 15px; 
+    display: block;
+    font-size: 0.9rem; /* Para que el margen funcione bien */
+  }
+  .option-button {
+    font-size: 0.8rem; /* Reducimos el tamaño de letra (prueba 0.85rem si quieres más chico) */
+    padding: 12px;     /* Reducimos el espacio interno para que el botón sea menos alto */
+    min-height: auto;  /* Dejamos que la altura se ajuste al texto */
+    
+  /* (Tus otros ajustes de móvil siguen aquí...) */
   .neon-title {
     font-size: 1.8rem;
   }
@@ -255,6 +281,7 @@ body, html {
     width: 120px;
   }
 }
+
 /* src/App.css */
 
 /* ... (todo tu código anterior) ... */
@@ -279,6 +306,7 @@ body, html {
 /* Explicación de la sombra:
    0px horizontal,
    2px vertical (hacia abajo),
-   4px de desenfoque (qué tan borrosa es),
-   rgba(0,0,0, 0.8) es color negro al 80% de opacidad.
-*/
+   4px blur (qué tan borroso es),
+   /* rgba(0,0,0,0.8) es negro con 80% de opacidad.
+      Ejemplo: text-shadow: 0px 2px 4px rgba(0,0,0,0.8); */
+ }
