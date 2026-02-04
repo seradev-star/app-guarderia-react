@@ -6,7 +6,10 @@ import React from 'react';
 const WelcomeScreen = ({ onStartClick }) => {
   return (
     <div className="welcome-container glass-panel">
-      <h1 className="neon-title">Centro de Cuidado "Futuro Seguro"</h1>
+      
+      <img src="/nubecita_dulce.png" alt="Logo Guardería" className="app-logo main-logo-anim" />
+      <h1 className="neon-title">Centro de Cuidado "Nubecita Dulce"</h1>
+      
       <h2 className="subtitle">Test de Compatibilidad Familiar</h2>
       
       <div className="intro-text">

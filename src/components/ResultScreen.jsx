@@ -26,6 +26,8 @@ const ResultScreen = ({ totalRiskScore }) => {
         {!isHighRisk ? (
           // --- CASO DE ÉXITO (BAJO RIESGO) ---
           <div className="success-message">
+
+            <img src="/nubecita_dulce.png" alt="Logo Guardería" className="app-logo main-logo-anim" />
             <div className="icon-box success-icon">✅</div>
             <h3>¡Perfil Compatible!</h3>
             <p>

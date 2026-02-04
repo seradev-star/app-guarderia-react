@@ -27,11 +27,15 @@ body, html {
   background-attachment: fixed; /* Efecto parallax al hacer scroll */
   
   min-height: 100vh;
+
+  width: 100vw;
+
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 /* --- 2. EL PANEL DE CRISTAL (Glassmorphism) --- */
@@ -57,11 +61,11 @@ body, html {
 .neon-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #fff;
+  color: #467a83;
   text-shadow: 
     0 0 7px #fff,
     0 0 10px #fff,
-    0 0 21px #fff,
+    0 0 21px #f0f4f3,
     0 0 42px var(--neon-blue),
     0 0 82px var(--neon-blue);
   letter-spacing: 2px;
@@ -196,4 +200,36 @@ body, html {
 @keyframes slideIn {
   from { opacity: 0; transform: translateX(50px); }
   to { opacity: 1; transform: translateX(0); }
+}
+/* --- ESTILOS DEL LOGO EN LA PORTADA --- */
+
+.app-logo {
+  /* Ajusta el tamaño según necesites */
+  width: 250px; 
+  height: auto; /* Mantiene la proporción */
+  
+  /* Centrado y márgenes */
+  display: block;
+  margin: 0 auto 10px auto; /* Centrado horizontal y margen abajo */
+  
+  /* Un toque de brillo para que combine con el tema */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
+}
+
+/* Animación de flotación suave */
+.main-logo-anim {
+  animation: floatLogo 3s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    /* Se mueve 15px hacia arriba */
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
