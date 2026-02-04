@@ -14,7 +14,7 @@ const ResultScreen = ({ totalRiskScore }) => {
     // Reemplaza con tu número real de WhatsApp en formato internacional (sin el +)
     // Ejemplo Perú: 51999888777
     const phoneNumber = "948781834"; 
-    const message = encodeURIComponent("Hola, he completado el test de compatibilidad y me gustaría agendar una entrevista.");
+    const message = encodeURIComponent("Hola, he completado el test de compatibilidad y me gustaría agendar una entrevista mi nombre:.......");
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
@@ -26,7 +26,7 @@ const ResultScreen = ({ totalRiskScore }) => {
         {!isHighRisk ? (
           // --- CASO DE ÉXITO (BAJO RIESGO) ---
           <div className="success-message">
-
+            
             <img src="/nubecita_dulce.png" alt="Logo Guardería" className="app-logo main-logo-anim" />
             <div className="icon-box success-icon">✅</div>
             <h3>¡Perfil Compatible!</h3>
