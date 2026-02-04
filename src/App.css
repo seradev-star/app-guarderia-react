@@ -7,6 +7,8 @@
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(255, 255, 255, 0.1);
   --text-color: #e0e0e0;
+  --glass-bg: rgba(6, 22, 65, 0.75);
+  --glass-border: rgba(255, 255, 255, 0.15);
 }
 
 body, html {
@@ -61,7 +63,7 @@ body, html {
 .neon-title {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #467a83;
+  color: #ecf4f6;
   text-shadow: 
     0 0 7px #fff,
     0 0 10px #fff,
@@ -233,3 +235,50 @@ body, html {
     transform: translateY(0px);
   }
 }
+/* --- AJUSTES ESPECÍFICOS PARA CELULARES --- */
+@media (max-width: 480px) {
+  
+  /* 1. Modificamos el contenedor principal en móvil */
+  .app-container {
+    /* En celular, no centramos verticalmente, alineamos arriba */
+    align-items: flex-start; 
+    /* Agregamos un buen colchón arriba para que no lo tape la barra del navegador */
+    padding-top: 50px; 
+    padding-bottom: 30px; /* Espacio abajo también */
+  }
+
+  /* 2. Ajustes de textos existentes */
+  .neon-title {
+    font-size: 1.8rem;
+  }
+  .app-logo {
+    width: 120px;
+  }
+}
+/* src/App.css */
+
+/* ... (todo tu código anterior) ... */
+
+
+/* ============================================== */
+/* --- MEJORA DE LEGIBILIDAD (Bordes/Sombra) --- */
+/* ============================================== */
+/* Esto aplica una sombra negra suave detrás del texto blanco */
+/* para que se lea perfectamente sobre cualquier fondo brillante. */
+
+.glass-panel h1,
+.glass-panel h2,
+.glass-panel h3,
+.glass-panel p,
+.glass-panel span,
+.option-button,
+.question-text { /* Aseguramos que agarre el texto de la pregunta */
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+/* Explicación de la sombra:
+   0px horizontal,
+   2px vertical (hacia abajo),
+   4px de desenfoque (qué tan borrosa es),
+   rgba(0,0,0, 0.8) es color negro al 80% de opacidad.
+*/

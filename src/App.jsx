@@ -1,6 +1,7 @@
 // src/App.jsx
 // 1. IMPORTAMOS useState Y useEffect
 import { useState, useEffect } from 'react';
+
 import './App.css';
 
 // IMPORTAMOS LAS PIEZAS (El Cerebro y los Cuerpos)
@@ -18,12 +19,19 @@ function App() {
   // =================================================================
   // --- NUEVO BLOQUE: EL ASCENSOR AUTOMÁTICO (useEffect) ---
   // =================================================================
-  // Este código le dice al navegador: "Cada vez que cambie la pantalla ('gameState')
-  // O cambie el número de pregunta ('currentQuestionIndex'), lleva el scroll arriba de todo."
+  // =================================================================
+  // --- ASCENSOR AUTOMÁTICO CON RETARDO (Ubicación Correcta) ---
+  // =================================================================
   useEffect(() => {
-    // (x: 0, y: 0) son las coordenadas de la esquina superior izquierda
-    window.scrollTo(0, 0);
-  }, [gameState, currentQuestionIndex]); // <-- Esta lista define cuándo se activa el ascensor
+    // Usamos un setTimeout para esperar un "parpadeo" (100ms)
+    const timer = setTimeout(() => {
+      // 'smooth' hace que la subida sea suave
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+
+    // Limpieza
+    return () => clearTimeout(timer);
+  }, [gameState, currentQuestionIndex]);
   // =================================================================
 
 
